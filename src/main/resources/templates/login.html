@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymefeaf.org">
+
+<body>
+<main role="main">
+    <div class="container my-5">
+      <div class="justify-content-center align-items-center" style="min-width: 600px">
+        <h3 class="text-center">Login Page</h3>
+
+        <div th:if="${loginError}" class="alert alert-danger">
+          <p>Invalid UserName or Password</p>
+        </div>
+
+        <form th:action="@{/login}" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control" id="username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" name="password" id="password">
+          </div>
+          <input type="submit" class="btn btn-primary btn-block" value="Login">
+        </form>
+      </div>
+    </div>
+</main>
+
+</body>
+</html>
